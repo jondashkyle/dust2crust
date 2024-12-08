@@ -1,9 +1,12 @@
 randomizeStickerValues()
+
+randomizePosition('skimo-thumb')
 randomizePosition('elevation')
 randomizePosition('distance')
+randomizePosition('hwy2')
 
 setTimeout(() => {
-    staggerDisplay(['hwy2', 'distance', 'elevation']);
+    staggerDisplay(['hwy2', 'distance', 'skimo-thumb', 'elevation']);
 }, 500);
 
 function staggerDisplay(classArray) {
@@ -22,7 +25,7 @@ function staggerDisplay(classArray) {
 }
 
 function randomizePosition(stickerClass) {
-    const sticker = document.querySelector(`.sticker.${stickerClass}`);
+    const sticker = document.querySelector(`.${stickerClass}`);
     if (!sticker) return;
 
     // Random rotation between -45 and 45 degrees

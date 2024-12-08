@@ -56,6 +56,26 @@ input, button, textarea, select {
     display: none;
 }
 
+.skimo-thumb {
+    position: fixed;
+    bottom: 15vmin;
+    right: 15vmin;
+    transform: rotate(15deg);
+    font-size: 1.5vmin;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: none;
+    flex-direction: column;
+}
+
+.skimo-thumb img {
+    height: 20vmin;
+    width: 30vmin;
+    object-fit: cover;
+    margin-bottom: 1vmin;
+}
+
 .stickers {
     display: none;
     position: fixed;
@@ -84,18 +104,25 @@ input, button, textarea, select {
 }
 
 .sticker.elevation {
+    background: #31C0AD;
+    color: #2C79D6;
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
     top: 25vmin;
     left: -5vmin;
     transform: rotate(22deg);
 }
 
 .sticker.distance {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background: #E4144F;
+    color: #F7D003;
     top: 15vmin;
     right: 15vmin;
     transform: rotate(-30deg);
 }
 
 .sticker .label {
+    font-size: 2vmin;
     font-weight: bold;
 }
 
@@ -121,7 +148,7 @@ input, button, textarea, select {
 
 .email-signup form {
     width: 100%;
-    max-width: 20rem;
+    max-width: 27rem;
 }
 
 .email-field {
@@ -133,11 +160,15 @@ input, button, textarea, select {
 
 .email-field input,
 .email-field button {
-    font-size: 1rem;;
+    font-size: 1rem;
     padding: 1rem;
     line-height: 1;
     border: 0;
     width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
 }
 
 .email-field input:focus {
