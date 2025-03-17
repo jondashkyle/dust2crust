@@ -3,10 +3,10 @@
 randomizePosition('skimo-thumb')
 // randomizePosition('elevation')
 // randomizePosition('distance')
-randomizePosition('hwy2')
+// randomizePosition('hwy2')
 
 setTimeout(() => {
-    staggerDisplay(['hwy2', 'skimo-thumb']);
+    staggerDisplay(['skimo-thumb']);
 }, 500);
 
 function staggerDisplay(classArray) {
