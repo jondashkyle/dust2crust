@@ -1,22 +1,22 @@
-randomizeStickerValues()
+// randomizeStickerValues()
 
 randomizePosition('skimo-thumb')
-randomizePosition('elevation')
-randomizePosition('distance')
+// randomizePosition('elevation')
+// randomizePosition('distance')
 randomizePosition('hwy2')
 
 setTimeout(() => {
-    staggerDisplay(['hwy2', 'distance', 'skimo-thumb', 'elevation']);
+    staggerDisplay(['hwy2', 'skimo-thumb']);
 }, 500);
 
 function staggerDisplay(classArray) {
     // Create a shuffled copy of the array
     const shuffledArray = [...classArray].sort(() => Math.random() - 0.5);
-    
+
     shuffledArray.forEach((className, index) => {
         const element = document.querySelector(`.${className}`);
         if (!element) return;
-        
+
         const randomDelay = Math.floor(Math.random() * 501) + 250; // 250-750ms
         setTimeout(() => {
             element.style.display = 'flex';
@@ -30,17 +30,17 @@ function randomizePosition(stickerClass) {
 
     // Random rotation between -45 and 45 degrees
     const rotation = Math.floor(Math.random() * 91) - 45;
-    
+
     // Random position values (keeping sticker mostly visible)
     const top = Math.floor(Math.random() * 60) + 5; // 5-65 vmin
     const side = Math.floor(Math.random() * 30) - 5; // -5-25 vmin
-    
+
     // Randomly choose left or right positioning
     const isLeft = Math.random() > 0.5;
-    
+
     sticker.style.transform = `rotate(${rotation}deg)`;
     sticker.style.top = `${top}vmin`;
-    
+
     if (isLeft) {
         sticker.style.left = `${side}vmin`;
         sticker.style.right = 'auto';
@@ -71,12 +71,12 @@ function randomizeStickerValues() {
         const valueElement = distanceSticker.querySelector('.value');
         let duration = 1000; // 1 second of rapid changes
         let interval;
-        
+
         interval = setInterval(() => {
             const randomValue = getRandomFloat(16, 27);
             valueElement.textContent = `${randomValue}mi`;
         }, 50); // Update every 50ms during animation
-        
+
         setTimeout(() => {
             clearInterval(interval);
             const finalValue = getRandomFloat(16, 27);
@@ -88,12 +88,12 @@ function randomizeStickerValues() {
         const valueElement = elevationSticker.querySelector('.value');
         let duration = 1000; // 1 second of rapid changes
         let interval;
-        
+
         interval = setInterval(() => {
             const randomValue = getRandomInt(7000, 12000);
             valueElement.textContent = `${randomValue}ft`;
         }, 50); // Update every 50ms during animation
-        
+
         setTimeout(() => {
             clearInterval(interval);
             const finalValue = getRandomInt(7000, 12000);
