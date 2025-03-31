@@ -64,6 +64,7 @@ select {
     display: none;
 }
 
+.map-thumb,
 .skimo-thumb {
     position: fixed;
     bottom: 15vmin;
@@ -77,6 +78,7 @@ select {
     flex-direction: column;
 }
 
+.map-thumb img,
 .skimo-thumb img {
     height: 20vmin;
     width: 30vmin;

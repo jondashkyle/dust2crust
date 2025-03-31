@@ -1,12 +1,13 @@
 // randomizeStickerValues()
 
 randomizePosition('skimo-thumb')
+randomizePosition('map-thumb')
 // randomizePosition('elevation')
 // randomizePosition('distance')
 // randomizePosition('hwy2')
 
 setTimeout(() => {
-    staggerDisplay(['skimo-thumb']);
+    staggerDisplay(['skimo-thumb', 'map-thumb']);
 }, 500);
 
 function staggerDisplay(classArray) {
