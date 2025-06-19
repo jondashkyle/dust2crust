@@ -2,17 +2,40 @@
  * simple reset
  */
 
+@font-face {
+    font-family: 'PicNic';
+    src: url('PicNic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.5;
+    line-height: 1;
     -webkit-font-smoothing: antialiased;
-    background-color: #000;
+    background-color: #85BEC8;
+    color: #E5E4D9;
+
+    font-size: 6vw;
+    font-weight: 400;
+    padding: 8vw 16vw 8vw 8vw;
+    text-wrap: balance;
+}
+
+.header {
+    font-family: 'PicNic', cursive;
 }
 
 img,
@@ -40,106 +63,22 @@ select {
 }
 
 /**
- * graphix
+ * countdown
  */
 
-.d2c {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vmin;
-    height: 90vmin;
-    object-fit: contain;
+.countdown {
+  display: inline;
 }
 
-.hwy2 {
-    height: 30vmin;
-    width: 30vmin;
-    position: fixed;
-    bottom: 15vmin;
-    right: 15vmin;
-    object-fit: contain;
-    transform: rotate(15deg);
-    display: none;
+.countdown-unit {
+    display: inline;
 }
 
-.map-thumb,
-.skimo-thumb {
-    position: fixed;
-    bottom: 15vmin;
-    right: 15vmin;
-    transform: rotate(15deg);
-    font-size: 1.5vmin;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    display: none;
-    flex-direction: column;
+.countdown-title {
+    margin-bottom: 3vw;
+    font-size: 4vw;
 }
 
-.map-thumb img,
-.skimo-thumb img {
-    height: 20vmin;
-    width: 30vmin;
-    object-fit: cover;
-    margin-bottom: 1vmin;
-}
-
-.stickers {
-    display: none;
-    position: fixed;
-    inset: 0;
-    display: flex;
-}
-
-.stickers>div {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.sticker {
-    background-color: #fff;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 5vmin 0;
-    width: 45vmin;
-    border-radius: 100%;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    display: none;
-}
-
-.sticker.elevation {
-    background: #31C0AD;
-    color: #2C79D6;
-    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
-    top: 25vmin;
-    left: -5vmin;
-    transform: rotate(22deg);
-}
-
-.sticker.distance {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    background: #E4144F;
-    color: #F7D003;
-    top: 15vmin;
-    right: 15vmin;
-    transform: rotate(-30deg);
-}
-
-.sticker .label {
-    font-size: 2vmin;
-    font-weight: bold;
-}
-
-.sticker .value {
-    font-size: 5vmin;
-    font-weight: bold;
-}
 
 /**
  * form
@@ -148,12 +87,13 @@ select {
 .email-signup {
     display: flex;
     justify-content: center;
-    margin: 5vmin;
+    margin: 1rem;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 2;
+    font-weight: 500;
 }
 
 .email-signup form {
@@ -179,6 +119,7 @@ select {
     font-size: 1rem;
     padding: 1rem;
     line-height: 1;
+    font-weight: inherit;
     border: 0;
     width: 100%;
     -webkit-appearance: none;
@@ -192,14 +133,18 @@ select {
 }
 
 .email-field input {
-    border: 2px solid #fff;
-    background: #000;
-    color: #fff;
+    border: 2px solid #E5E4D9;
+    background: #85BEC8;
+    color: #E5E4D9;
+}
+
+.email-field input::placeholder {
+    color: #E5E4D9;
 }
 
 .email-field button {
-    background: #fff;
-    color: #000;
+    background: #E5E4D9;
+    color: #85BEC8;
     font-weight: bold;
     cursor: pointer;
     margin-top: 1rem;
@@ -207,12 +152,12 @@ select {
 
 .email-signup hr {
     border: 0;
-    border-top: 2px solid #fff;
+    border-top: 2px solid #E5E4D9;
     margin: 1rem 0;
 }
 
 .email-signup a {
-    color: #fff;
+    color: #E5E4D9;
     font-size: 1rem;
     padding: 1rem;
     line-height: 1;
@@ -223,7 +168,7 @@ select {
     appearance: none;
     border-radius: 0;
     display: block;
-    border: 2px solid #fff;
+    border: 2px solid #E5E4D9;
     text-align: center;
     text-decoration: none;
 }
@@ -231,4 +176,16 @@ select {
 [data-email-octopus-form-success],
 [data-email-octopus-form-error] {
     display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 9vw;
+        text-wrap: auto;
+        padding: 4vw;
+    }
+
+    .email-signup {
+        margin: 4vw;
+    }
 }
