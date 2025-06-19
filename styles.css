@@ -29,7 +29,7 @@ body {
     background-color: #85BEC8;
     color: #E5E4D9;
 
-    font-size: 6vw;
+    font-size: 8vw;
     font-weight: 400;
     padding: 8vw 16vw 8vw 8vw;
     text-wrap: balance;
@@ -86,15 +86,10 @@ select {
  */
 
 .email-signup {
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
+    width: 100%;
+    max-width: 24rem;
     font-weight: 500;
+    margin-top: 8vw;
 }
 
 .email-signup form {
@@ -181,12 +176,12 @@ select {
 
 @media (max-width: 768px) {
     body {
-        font-size: 9vw;
+        font-size: 10vw;
         text-wrap: auto;
         padding: 4vw;
     }
 
     .email-signup {
-        margin: 4vw;
+        margin-top: 8vw;
     }
 }
