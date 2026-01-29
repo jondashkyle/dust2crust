@@ -127,5 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     setupMarquee("marquee-top", 20);
     setupMarquee("marquee-bottom", 20);
-  }, 5000);
+  }, 1000 * 10);
 });
