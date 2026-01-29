@@ -1,14 +1,15 @@
 body {
   font-size: 5vw;
-  padding: 0;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   gap: 4vw;
   line-height: 1;
   position: fixed;
   inset: 0;
+  box-sizing: border-box;
 }
 
 main {
