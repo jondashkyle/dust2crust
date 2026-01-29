@@ -122,4 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMarquee("marquee-top", 20);
   setupMarquee("marquee-bottom", 20);
   positionRegisterLink();
+
+  // Randomize marquee content every 5 seconds
+  setInterval(() => {
+    setupMarquee("marquee-top", 20);
+    setupMarquee("marquee-bottom", 20);
+  }, 5000);
 });
