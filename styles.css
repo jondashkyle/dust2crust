@@ -28,7 +28,6 @@ main img {
   width: 100%;
   display: block;
   object-fit: contain;
-  margin: 2.5vw;
 }
 
 #register {
